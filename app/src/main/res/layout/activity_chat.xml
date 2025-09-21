@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#F3F4F6"
+        tools:context=".ChatActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/hdfc_card_bg"
+        android:elevation="10dp"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_logo"
+            android:contentDescription="App Logo"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="HDFC Intelligence"
+            android:fontFamily="@font/latoregular"
+            android:textColor="@color/hdfc_primary_dark"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:background="@color/hdfc_card_bg"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="16dp"
+            android:clipToPadding="false" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="5dp"
+        android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/hdfc_card_bg"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvTotalExpenses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="12dp"
+            android:fontFamily="@font/latoregular"
+            android:background="@drawable/rounded_background"
+            android:text="What’s my total expenses"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvTopCategories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="12dp"
+            android:background="@drawable/rounded_background"
+            android:text="Show my top categories"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvExpensesThisMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="12dp"
+            android:fontFamily="@font/latoregular"
+            android:background="@drawable/rounded_background"
+            android:text="Expenses for this month"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvRecurringPayments"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="12dp"
+            android:fontFamily="@font/latoregular"
+            android:background="@drawable/rounded_background"
+            android:text="Show recurring payments"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvLastMonthReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:padding="12dp"
+            android:fontFamily="@font/latoregular"
+            android:visibility="gone"
+            android:background="@drawable/rounded_background"
+            android:text="Last month’s report"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    </HorizontalScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"
+            android:background="@drawable/rounded_input"
+            android:padding="8dp">
+
+
+            <EditText
+                android:id="@+id/messageInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:hint="Ask me anything about your statement"
+                android:background="@drawable/rounded_edittext"
+                android:padding="12dp"
+                android:fontFamily="@font/latoregular"
+                android:textColor="#000000"
+                android:textColorHint="#888888"
+                android:inputType="text" />
+
+            <ImageButton
+                android:id="@+id/sendButton"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/latoregular"
+                android:background="@drawable/rounded_background"
+                android:src="@android:drawable/ic_menu_send"
+                android:contentDescription="Senad Message" />
+        </LinearLayout>
+
+    </LinearLayout>
+

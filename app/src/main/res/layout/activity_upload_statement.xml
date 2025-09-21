@@ -1,0 +1,179 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical"
+        android:padding="24dp"
+        android:background="@android:color/white">
+
+        <!-- Title -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload Statement"
+            android:textColor="#000000"
+            android:fontFamily="@font/latoregular"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- Upload Box with Dashed Border -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/dashed_border"
+            android:gravity="center"
+            android:padding="20dp">
+
+            <!-- Upload Icon -->
+            <ImageView
+                android:id="@+id/uploadIcon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/ic_upload"
+                android:contentDescription="Upload Icon"
+                app:tint="#1A73E8"/>
+
+            <!-- Drag & Drop Text -->
+            <TextView
+                android:id="@+id/dragText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/latoregular"
+                android:layout_below="@id/uploadIcon"
+                android:layout_marginTop="16dp"
+                android:text="Drag &amp; Drop your PDF/CSV here"
+                android:textColor="#6B6B6B"
+                android:textSize="14sp"
+                android:gravity="center"/>
+
+            <!-- Select File Button -->
+            <Button
+                android:id="@+id/btn_select_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/dragText"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/latoregular"
+                android:text="Select File"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1A73E8"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="12dp"
+                android:textAllCaps="false"/>
+
+            <!-- Supported Formats Text -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn_select_file"
+                android:layout_margin="16dp"
+                android:text="Supported formats: PDF, CSV (Max size: 10MB)"
+                android:textColor="#6B6B6B"
+                android:textSize="12sp"
+                android:gravity="center"/>
+        </RelativeLayout>
+
+        <!-- Analyze Statement Button -->
+        <Button
+            android:id="@+id/btn_analyze"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Analyze Statement"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#D3D3D3"
+            android:textColor="#FFFFFF"
+            android:fontFamily="@font/latoregular"
+            android:textAllCaps="false"
+            android:enabled="false"/>
+    </LinearLayout>
+
+   <!-- &lt;!&ndash; Blurred Background (Hidden Initially) &ndash;&gt;
+    <View
+        android:id="@+id/blurBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"/>
+
+    &lt;!&ndash; Loading Section (Hidden Initially) &ndash;&gt;
+    <LinearLayout
+        android:id="@+id/loadingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@drawable/gradient_background"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:indeterminate="true"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/latoregular"
+            android:text="Take a moment, the statement is being analyzed via HDFC Intelligene AI."
+            android:textSize="20sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/loadingContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/white"
+        android:visibility="gone">
+
+        <!-- FrameLayout to Stack Lottie & Text Together -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:layout_height="match_parent">
+
+            <!-- Lottie Animation -->
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnimation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:lottie_rawRes="@raw/test"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                tools:ignore="MissingClass" />
+
+            <!-- Overlayed Text -->
+            <TextView
+                android:id="@+id/lottieOverlayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Take a moment, the statement is being analyzed via HDFC Intelligence..."
+                android:textSize="16sp"
+                android:fontFamily="@font/latoregular"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:layout_gravity="center"/> <!-- Centered on animation -->
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+
+    <style name="Theme.HDFCIntelligence" parent="android:Theme.Material.Light.NoActionBar">
+        <!-- Primary Branding -->
+        <item name="android:colorPrimary">@color/hdfc_primary</item>
+        <item name="android:colorAccent">@color/hdfc_accent</item>
+
+        <!-- Background & Text -->
+        <item name="android:windowBackground">@color/hdfc_background</item>
+        <item name="android:textColorPrimary">@color/hdfc_text_primary</item>
+        <item name="android:textColorSecondary">@color/hdfc_text_secondary</item>
+
+    </style>
+    <!-- Base application theme. -->
+    <style name="Base.Theme.HDFCIntelligence" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+
+</resources>
+
+
+
+
+
+
